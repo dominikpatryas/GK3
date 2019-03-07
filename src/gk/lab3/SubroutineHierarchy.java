@@ -49,7 +49,7 @@ public class SubroutineHierarchy extends JPanel {
 	private void drawWorld(Graphics2D g2) {
 
 		// TODO: Draw the content of the scene.
-		rotatingRect(g2);  // (DELETE THIS EXAMPLE)
+		Poly1(g2);  // (DELETE THIS EXAMPLE)
 		
 	} // end drawWorld()
 	
@@ -66,9 +66,21 @@ public class SubroutineHierarchy extends JPanel {
 
 	// TODO: Define methods for drawing objects in the scene.
 	
-	private void rotatingRect(Graphics2D g2) { // (DELETE THIS EXAMPLE)
+	private void Poly1(Graphics2D g2) { // (DELETE THIS EXAMPLE)
 		AffineTransform saveTransform = g2.getTransform();  // (It might be necessary to save/restore transform and color)
 		Color saveColor = g2.getColor();
+		
+		g2.translate(0,-2.3);
+		line1(g2);
+		g2.setTransform(saveTransform);
+		
+		g2.translate(0, -0.8);
+		triangle1(g2);
+		
+		
+		
+		g2.setTransform(saveTransform);
+		g2.translate(1, 1);
 		int n=11;       
         double r = 150,
         		t=0,
@@ -77,29 +89,45 @@ public class SubroutineHierarchy extends JPanel {
         int[] y1 = new int[n];
         for (int i=0;i<n;i++)
         {
-        	x1[i] = (int) (r * Math.sin(t));
-            y1[i] = (int) (r * Math.cos(t));
-            
-            if(y1[i]>50)
-                x1[i]+=100;
-            
-            if(y1[i] < -50)
-                x1[i]-=100;
-            
+            x1[i]= (int) (r*Math.sin(t));
+            y1[i]= (int) (r*Math.cos(t));
             t+=k;
         }
 	
 		Polygon polygon = new Polygon(x1,y1,n);
 		g2.setColor( Color.RED );
 		g2.rotate( Math.toRadians( frameNumber*0.75 ));
-		g2.scale( 0.01, 0.01 );
+		g2.scale( 0.005, 0.005 );
 		g2.fill(polygon);
 		
 		g2.setColor(saveColor);
 		g2.setTransform(saveTransform);
+		
+	}
+	
+	private void triangle1(Graphics2D g2) {
+		g2.setColor(Color.blue);
+		g2.translate(0.5, -2);
+		
+		
+		Path2D path = new Path2D.Double();  
+		path.moveTo(-0.5,0);
+		path.lineTo(0.5,0);
+		path.lineTo(0,2.3);
+		path.closePath();
+		g2.fill(path);
 	}
 
+	private void line1(Graphics2D g2) { // Draws a line from (-0.5,0) to (0.5,0)
+		g2.setColor(Color.black);
 
+		g2.setStroke(new BasicStroke((float) 0.4));
+		
+		g2.draw( new Line2D.Double( -1,3, 2,1) );
+	}
+	
+	
+	
 	//------------------- Some methods for drawing basic shapes. ----------------
 	
 	private static void line(Graphics2D g2) { // Draws a line from (-0.5,0) to (0.5,0)
