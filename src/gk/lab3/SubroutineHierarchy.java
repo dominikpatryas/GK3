@@ -69,16 +69,7 @@ public class SubroutineHierarchy extends JPanel {
 	private void Poly1(Graphics2D g2) { // (DELETE THIS EXAMPLE)
 		AffineTransform saveTransform = g2.getTransform();  // (It might be necessary to save/restore transform and color)
 		Color saveColor = g2.getColor();
-		
-		g2.translate(0,-2.3);
-		line1(g2);
-		g2.setTransform(saveTransform);
-		
-		g2.translate(0, -0.8);
-		triangle1(g2);
-		
-		
-		
+				
 		g2.setTransform(saveTransform);
 		g2.translate(1, 1);
 		int n=11;       
@@ -93,9 +84,20 @@ public class SubroutineHierarchy extends JPanel {
             y1[i]= (int) (r*Math.cos(t));
             t+=k;
         }
-	
+	//////////////////////////////////////////////
 		Polygon polygon = new Polygon(x1,y1,n);
-		g2.setColor( Color.RED );
+		g2.translate(1.9, -2.05);
+		g2.setColor( Color.black );
+		g2.rotate( Math.toRadians( frameNumber*0.75 ));
+		g2.scale( 0.005, 0.005 );
+		g2.fill(polygon);
+		
+		g2.setColor(saveColor);
+		g2.setTransform(saveTransform);
+	//////////////////////////////////////////////
+		Polygon polygon2 = new Polygon(x1,y1,n);
+		g2.translate(-0.4, -0);
+		g2.setColor( Color.black );
 		g2.rotate( Math.toRadians( frameNumber*0.75 ));
 		g2.scale( 0.005, 0.005 );
 		g2.fill(polygon);
@@ -103,10 +105,140 @@ public class SubroutineHierarchy extends JPanel {
 		g2.setColor(saveColor);
 		g2.setTransform(saveTransform);
 		
+		
+		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ LINIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		
+		g2.translate(0.7,-2.3);
+		g2.setColor(Color.red);
+
+		g2.setStroke(new BasicStroke((float) 0.3));
+		
+		g2.draw( new Line2D.Double( -1,2.3, 2.2,1.3) );
+		
+		g2.setTransform(saveTransform);
+		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TRÓJK¥T @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		g2.translate(0.7, -0.8);
+		g2.setColor(Color.blue);
+		triangle1(g2);
+		
+		g2.setTransform(saveTransform);
+		
+// ######################################################################################################################	
+		
+		
+		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@ WIELOK¥T @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				g2.setTransform(saveTransform);
+				
+				Polygon polygon3 = new Polygon(x1,y1,n);
+				g2.scale(0.7, 0.7);
+				g2.translate(-4.4, 3.2);
+				g2.setColor( Color.black );
+				g2.rotate( Math.toRadians( frameNumber*0.75 ));
+				g2.scale( 0.005, 0.005 );
+				g2.fill(polygon);
+				
+				g2.setColor(saveColor);
+				g2.setTransform(saveTransform);
+			//////////////////////////////////////////////
+				Polygon polygon4 = new Polygon(x1,y1,n);
+				g2.scale(0.7, 0.7);
+				g2.translate(-1.4, 2.3);
+				g2.setColor( Color.black );
+				g2.rotate( Math.toRadians( frameNumber*0.75 ));
+				g2.scale( 0.005, 0.005 );
+				g2.fill(polygon);
+				
+				g2.setColor(saveColor);
+				
+		
+		
+		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ LINIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		g2.setTransform(saveTransform);
+		
+		
+		
+		g2.scale(0.7, 1);
+		g2.translate(-3.5,0.2);
+		g2.setColor(Color.red);
+
+		g2.setStroke(new BasicStroke((float) 0.3));
+		
+		g2.draw( new Line2D.Double( -0.8,2, 2,1.4) );
+		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TRÓJK¥T @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		g2.setTransform(saveTransform);
+		
+		g2.translate(-2.5, 1.7);
+		g2.setColor(new Color(145,17,133));
+		g2.scale(0.7, 0.8);
+		triangle1(g2);
+		
+		
+		// ######################################################################################################################	
+		
+		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@ WIELOK¥T @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		g2.setTransform(saveTransform);
+		
+		Polygon polygon5 = new Polygon(x1,y1,n);
+		g2.scale(0.6, 0.60);
+		g2.translate(4.6, 3);
+		g2.setColor( Color.black );
+		g2.rotate( Math.toRadians( frameNumber*0.75 ));
+		g2.scale( 0.005, 0.005 );
+		g2.fill(polygon5);
+		
+		g2.setColor(saveColor);
+		g2.setTransform(saveTransform);
+	//////////////////////////////////////////////
+		Polygon polygon6 = new Polygon(x1,y1,n);
+		g2.scale(0.6, 0.6);
+		g2.translate(1.5, 3.9);
+		g2.setColor( Color.black );
+		g2.rotate( Math.toRadians( frameNumber*0.75 ));
+		g2.scale( 0.005, 0.005 );
+		g2.fill(polygon6);
+		
+		g2.setColor(saveColor);
+		
+
+
+		
+		
+		
+		
+		
+		
+		
+		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ LINIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				g2.setTransform(saveTransform);
+				
+				
+				
+				g2.scale(0.6, 0.8);
+				g2.translate(2.5,0.9);
+				g2.setColor(Color.red);
+
+				g2.setStroke(new BasicStroke((float) 0.3));
+				
+				g2.draw( new Line2D.Double( -0.8,2, 2,1.4) );
+		
+		
+		
+		
+		
+		
+		
+		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TRÓJK¥T @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				g2.setTransform(saveTransform);
+				
+				g2.translate(1.6, 1.9);
+				g2.setColor(new Color(42,120,18));
+				g2.scale(0.5, 0.6);
+				triangle1(g2);
+
 	}
 	
 	private void triangle1(Graphics2D g2) {
-		g2.setColor(Color.blue);
+		
 		g2.translate(0.5, -2);
 		
 		
@@ -119,11 +251,11 @@ public class SubroutineHierarchy extends JPanel {
 	}
 
 	private void line1(Graphics2D g2) { // Draws a line from (-0.5,0) to (0.5,0)
-		g2.setColor(Color.black);
+		g2.setColor(Color.red);
 
-		g2.setStroke(new BasicStroke((float) 0.4));
+		g2.setStroke(new BasicStroke((float) 0.3));
 		
-		g2.draw( new Line2D.Double( -1,3, 2,1) );
+		g2.draw( new Line2D.Double( -1,2.3, 2.2,1.3) );
 	}
 	
 	
