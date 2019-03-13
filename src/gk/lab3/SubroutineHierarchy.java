@@ -102,7 +102,7 @@ public class SubroutineHierarchy extends JPanel {
 		g2.translate(0.7,-2.3);
 		g2.setColor(Color.red);
 
-		g2.setStroke(new BasicStroke((float) 0.3));
+		g2.setStroke(new BasicStroke((float) 0.2));
 		
 		g2.draw( new Line2D.Double( -1,2.3, 2.2,1.3) );
 		
@@ -146,7 +146,7 @@ public class SubroutineHierarchy extends JPanel {
 		g2.translate(-3.5,0.2);
 		g2.setColor(Color.red);
 
-		g2.setStroke(new BasicStroke((float) 0.3));
+		g2.setStroke(new BasicStroke((float) 0.2));
 		
 		g2.draw( new Line2D.Double( -0.8,2, 2,1.4) );
 		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TRÓJK¥T @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -190,7 +190,7 @@ public class SubroutineHierarchy extends JPanel {
 				g2.translate(2.5,0.9);
 				g2.setColor(Color.red);
 
-				g2.setStroke(new BasicStroke((float) 0.3));
+				g2.setStroke(new BasicStroke((float) 0.2));
 				
 				g2.draw( new Line2D.Double( -0.8,2, 2,1.4) );
 		
