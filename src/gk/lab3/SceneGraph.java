@@ -55,20 +55,20 @@ public class SceneGraph extends JPanel {
 
 		t1 = new TransformedObject(filledTriangle);
 		t1.setScale(0.90, 2).setColor(Color.blue);
-		t1.setTranslation(-1, -2.9);
+		t1.setTranslation(0.5, -2.9);
 		
 		r1 = new TransformedObject(filledRect);
 		r1.setScale(4, 0.28).setColor(Color.red);
-		r1.setTranslation(-1, -1.0);
+		r1.setTranslation(0.5, -1.0);
 		r1.setRotation(168);
 		
 		w1_1 = new TransformedObject(filledPolygon);
 		w1_1.setColor(Color.black);
-		w1_1.setTranslation(-2.9, -0.6);
+		w1_1.setTranslation(-1.4, -0.6);
 		
 		w1_2 = new TransformedObject(filledPolygon);
 		w1_2.setColor(Color.black);
-		w1_2.setTranslation(0.85, -1.4);
+		w1_2.setTranslation(2.35, -1.4);
 
 		double offsetX = 2.8;
 		double offsetY = 2.3;
