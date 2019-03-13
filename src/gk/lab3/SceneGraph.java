@@ -42,23 +42,94 @@ public class SceneGraph extends JPanel {
 
 	private CompoundObject world; // SceneGraphNode representing the entire scene.
 
-	// TODO: Define global variables to represent animated objects in the scene.
-	private TransformedObject rotatingRect;  // (DELETE THIS EXAMPLE)
+	private TransformedObject t1,r1,w1_1,w1_2;
+	
+	private TransformedObject t2,r2,w2_1,w2_2;
+	
+	private TransformedObject t3, r3,w3_1,w3_2;
+	
 
-	/**
-	 *  Builds the data structure that represents the entire picture. 
-	 */
 	private void createWorld() {
 
-		world = new CompoundObject();  // Root node for the scene graph.
+		world = new CompoundObject();  
 
-		// TODO: Create objects and add them to the scene graph.
-		rotatingRect = new TransformedObject(filledRect);   // (DELETE THIS EXAMPLE)
-		rotatingRect.setScale(2,2).setColor(Color.RED); 
+		t1 = new TransformedObject(filledTriangle);
+		t1.setScale(0.90, 2).setColor(Color.blue);
+		t1.setTranslation(-1, -2.9);
 		
-		world.add(rotatingRect);
+		r1 = new TransformedObject(filledRect);
+		r1.setScale(4, 0.28).setColor(Color.red);
+		r1.setTranslation(-1, -1.0);
+		r1.setRotation(168);
+		
+		w1_1 = new TransformedObject(filledPolygon);
+		w1_1.setColor(Color.black);
+		w1_1.setTranslation(-2.9, -0.6);
+		
+		w1_2 = new TransformedObject(filledPolygon);
+		w1_2.setColor(Color.black);
+		w1_2.setTranslation(0.85, -1.4);
 
-	} // end createWorld()
+		double offsetX = 2.8;
+		double offsetY = 2.3;
+		double offsetScale = 0.6;
+
+		t2 = new TransformedObject(filledTriangle);
+		t2.setScale(0.6*offsetScale, 1.6*offsetScale).setColor(new Color(42,120,18));
+		t2.setTranslation(-1*offsetScale + offsetX, -2*offsetScale + offsetY);
+		
+		r2 = new TransformedObject(filledRect);
+		r2.setScale(3.5*offsetScale, 0.25*offsetScale).setColor(Color.red);
+		r2.setTranslation(-1*offsetScale + offsetX, -0.5*offsetScale + offsetY);
+		r2.setRotation(168);
+		
+		w2_1 = new TransformedObject(filledPolygon);
+		w2_1.setScale(1*offsetScale, 1*offsetScale).setColor(Color.black);
+		w2_1.setTranslation(-2.7*offsetScale + offsetX, -0.15*offsetScale + offsetY);
+		
+		w2_2 = new TransformedObject(filledPolygon);
+		w2_2.setScale(1*offsetScale, 1*offsetScale).setColor(Color.black);
+		w2_2.setTranslation(0.65*offsetScale + offsetX, -0.85*offsetScale + offsetY);
+		
+
+		offsetX = -1.4;
+		offsetY = 2.6;
+		offsetScale = 0.4;
+		
+		t3 = new TransformedObject(filledTriangle);
+		t3.setScale(1.20*offsetScale, 3.3*offsetScale).setColor(new Color(145,17,133));
+		t3.setTranslation(-1*offsetScale + offsetX, -5.3*offsetScale + offsetY);
+		
+		r3 = new TransformedObject(filledRect);
+		r3.setScale(6*offsetScale, 0.4*offsetScale).setColor(Color.red);
+		r3.setTranslation(-1*offsetScale + offsetX, -2.1*offsetScale + offsetY);
+		r3.setRotation(168);
+		
+		w3_1 = new TransformedObject(filledPolygon);
+		w3_1.setScale(1.7*offsetScale, 1.7*offsetScale).setColor(Color.black);
+		w3_1.setTranslation(-3.9*offsetScale + offsetX, -1.5*offsetScale + offsetY);
+		
+		w3_2 = new TransformedObject(filledPolygon);		
+		w3_2.setScale(1.7*offsetScale, 1.7*offsetScale).setColor(Color.black);
+		w3_2.setTranslation(1.8*offsetScale + offsetX, -2.7*offsetScale + offsetY);
+	
+		world.add(w1_1);
+		world.add(w1_2);
+		world.add(r1);
+		world.add(t1);
+		
+		world.add(w2_1);
+		world.add(w2_2);
+		world.add(r2);
+		world.add(t2);
+		
+		world.add(w3_1);
+		world.add(w3_2);		
+		world.add(r3);
+		world.add(t3);
+		
+
+	} 
 
 
 	/**
@@ -69,7 +140,17 @@ public class SceneGraph extends JPanel {
 		frameNumber++;
 
 		// TODO: Update state in preparation for drawing the next frame.
-		rotatingRect.setRotation(frameNumber*0.75); // (DELETE THIS EXAMPLE)
+		
+		w1_2.setRotation(frameNumber*0.75);
+		w1_1.setRotation(frameNumber*0.75);
+		
+		
+		w2_2.setRotation(frameNumber*0.75);
+		w2_1.setRotation(frameNumber*0.75);
+		
+		w3_2.setRotation(frameNumber*0.75);
+		w3_1.setRotation(frameNumber*0.75);
+		//rotatingRect.setRotation(frameNumber*0.75); // (DELETE THIS EXAMPLE)
 
 	}
 
@@ -170,7 +251,6 @@ public class SceneGraph extends JPanel {
 	private static SceneGraphNode rect = new SceneGraphNode() {
 		void doDraw(Graphics2D g) {  g.draw(new Rectangle2D.Double(-0.5,-0.5,1,1)); }
 	};
-	
 
 	private static SceneGraphNode filledRect = new SceneGraphNode() {
 		void doDraw(Graphics2D g) {  g.fill(new Rectangle2D.Double(-0.5,-0.5,1,1)); }
@@ -195,6 +275,28 @@ public class SceneGraph extends JPanel {
 		}
 	};
 
+	private static SceneGraphNode filledPolygon = new SceneGraphNode() {
+		
+		void doDraw(Graphics2D g2) {
+			int n=11;       
+	        double r = 150,	t=0, k=(Math.PI*2)/n;
+	    	int[] x1 = new int[n];
+	        int[] y1 = new int[n];
+	        for (int i=0;i<n;i++)
+	        {
+	            x1[i]= (int) (r*Math.sin(t));
+	            y1[i]= (int) (r*Math.cos(t));
+	            t+=k;
+	        }
+	        Polygon polygon = new Polygon(x1,y1,n);
+			g2.scale( 0.0045, 0.0045 );
+			g2.fill(polygon);
+			
+		
+	        
+	}
+	};
+	
 
 
 	//--------------------------------- Implementation ------------------------------------

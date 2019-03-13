@@ -49,25 +49,17 @@ public class SubroutineHierarchy extends JPanel {
 	private void drawWorld(Graphics2D g2) {
 
 		// TODO: Draw the content of the scene.
-		Poly1(g2);  // (DELETE THIS EXAMPLE)
+		F1(g2);  
 		
 	} // end drawWorld()
-	
-	
-	/**
-	 * This method is called before each frame is drawn.
-	 */
+		
 	private void updateFrame() {
 		frameNumber++;
 		// TODO: If other updates are needed for the next frame, do them here.
 	}
-
 	
-
-	// TODO: Define methods for drawing objects in the scene.
-	
-	private void Poly1(Graphics2D g2) { // (DELETE THIS EXAMPLE)
-		AffineTransform saveTransform = g2.getTransform();  // (It might be necessary to save/restore transform and color)
+	private void F1(Graphics2D g2) { 
+		AffineTransform saveTransform = g2.getTransform();
 		Color saveColor = g2.getColor();
 				
 		g2.setTransform(saveTransform);
@@ -95,7 +87,7 @@ public class SubroutineHierarchy extends JPanel {
 		g2.setColor(saveColor);
 		g2.setTransform(saveTransform);
 	//////////////////////////////////////////////
-		Polygon polygon2 = new Polygon(x1,y1,n);
+		
 		g2.translate(-0.4, -0);
 		g2.setColor( Color.black );
 		g2.rotate( Math.toRadians( frameNumber*0.75 ));
@@ -103,8 +95,7 @@ public class SubroutineHierarchy extends JPanel {
 		g2.fill(polygon);
 		
 		g2.setColor(saveColor);
-		g2.setTransform(saveTransform);
-		
+		g2.setTransform(saveTransform);	
 		
 		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ LINIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		
@@ -124,12 +115,10 @@ public class SubroutineHierarchy extends JPanel {
 		g2.setTransform(saveTransform);
 		
 // ######################################################################################################################	
-		
-		
+	
 		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@ WIELOK¥T @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 				g2.setTransform(saveTransform);
-				
-				Polygon polygon3 = new Polygon(x1,y1,n);
+			
 				g2.scale(0.7, 0.7);
 				g2.translate(-4.4, 3.2);
 				g2.setColor( Color.black );
@@ -140,7 +129,7 @@ public class SubroutineHierarchy extends JPanel {
 				g2.setColor(saveColor);
 				g2.setTransform(saveTransform);
 			//////////////////////////////////////////////
-				Polygon polygon4 = new Polygon(x1,y1,n);
+				
 				g2.scale(0.7, 0.7);
 				g2.translate(-1.4, 2.3);
 				g2.setColor( Color.black );
@@ -149,14 +138,10 @@ public class SubroutineHierarchy extends JPanel {
 				g2.fill(polygon);
 				
 				g2.setColor(saveColor);
-				
-		
-		
+	
 		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ LINIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		g2.setTransform(saveTransform);
-		
-		
-		
+
 		g2.scale(0.7, 1);
 		g2.translate(-3.5,0.2);
 		g2.setColor(Color.red);
@@ -171,47 +156,35 @@ public class SubroutineHierarchy extends JPanel {
 		g2.setColor(new Color(145,17,133));
 		g2.scale(0.7, 0.8);
 		triangle1(g2);
-		
-		
+
 		// ######################################################################################################################	
 		
 		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@ WIELOK¥T @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		g2.setTransform(saveTransform);
 		
-		Polygon polygon5 = new Polygon(x1,y1,n);
+
 		g2.scale(0.6, 0.60);
 		g2.translate(4.6, 3);
 		g2.setColor( Color.black );
 		g2.rotate( Math.toRadians( frameNumber*0.75 ));
 		g2.scale( 0.005, 0.005 );
-		g2.fill(polygon5);
+		g2.fill(polygon);
 		
 		g2.setColor(saveColor);
 		g2.setTransform(saveTransform);
 	//////////////////////////////////////////////
-		Polygon polygon6 = new Polygon(x1,y1,n);
+		
 		g2.scale(0.6, 0.6);
 		g2.translate(1.5, 3.9);
 		g2.setColor( Color.black );
 		g2.rotate( Math.toRadians( frameNumber*0.75 ));
 		g2.scale( 0.005, 0.005 );
-		g2.fill(polygon6);
+		g2.fill(polygon);
 		
 		g2.setColor(saveColor);
 		
-
-
-		
-		
-		
-		
-		
-		
-		
 		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ LINIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 				g2.setTransform(saveTransform);
-				
-				
 				
 				g2.scale(0.6, 0.8);
 				g2.translate(2.5,0.9);
@@ -220,11 +193,6 @@ public class SubroutineHierarchy extends JPanel {
 				g2.setStroke(new BasicStroke((float) 0.3));
 				
 				g2.draw( new Line2D.Double( -0.8,2, 2,1.4) );
-		
-		
-		
-		
-		
 		
 		
 		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TRÓJK¥T @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -250,7 +218,7 @@ public class SubroutineHierarchy extends JPanel {
 		g2.fill(path);
 	}
 
-	private void line1(Graphics2D g2) { // Draws a line from (-0.5,0) to (0.5,0)
+	private void line1(Graphics2D g2) { 
 		g2.setColor(Color.red);
 
 		g2.setStroke(new BasicStroke((float) 0.3));
